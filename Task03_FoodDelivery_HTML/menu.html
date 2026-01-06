@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>menu</title>
+        <style type="text/css">
+            video {
+                width:100%;
+                height:400px;
+                object-fit:cover;
+
+            }
+            .a1{
+                position:absolute;
+                top:173px;
+                left:41%;
+                font-size:45px;
+                font-weight:bold;
+                font-family:sans-serif;
+                
+            }
+           .add{
+            position:relative;
+           }
+           .a2{
+            position:absolute;
+            top:215px;
+            left:35%;
+            font-size:45px;
+            font-weight:bold;
+            font-family:sans-serif;
+                
+           }
+           .a3{
+            position:absolute;
+            top:265px;
+            left:25%;
+            font-size:28px;
+            font-weight:bold;
+            font-family:sans-serif;
+           }
+           .a4{
+            position:absolute;
+            top:285px;
+            left:38%;
+            font-size:50px;
+            font-weight:bold;
+            font-family:sans-serif;
+            color:rgb(4, 47, 9);
+           }
+           ul li{
+            display:inline;
+            padding-right:45px;
+            font-size:20px;
+           }
+          .nav{
+            display:flex;
+            gap:30px;
+            font-size:18px;
+          } 
+          .nav-item{
+            cursor:pointer;
+            padding-bottom:8px;
+            color:black;
+          }
+          .nav-item.active{
+            color:red;
+            border-bottom:3px solid red;
+          }
+          .tab-content{
+            display:none;
+            padding:20px 0;
+
+          }
+          .tab-content.active{
+            display:block;
+          }
+          .audio{
+            width:600px;
+            background-color:green;
+          }
+          .iframe{
+              border:2px solid red;
+          }
+            
+        </style>
+    </head>
+    <body>
+
+         <div class="add">   
+         <video src="https://www.shutterstock.com/shutterstock/videos/3788659263/preview/stock-footage--k-slow-motion-video-of-crispy-chicken-nuggets-dropping-onto-a-flat-surface-perfect-for-fast-food.webm"
+         autoplay muted loop>
+        </video>
+        <div class="a1">
+           India's #1</div>
+        <div class="a2" >food delivery app</div>
+            <div class="a3">Experiance fast & easy online ordering 
+                on this app
+            </div>
+          <div class="a4">
+            50% OFF<br>
+            Order Now
+        </div>
+        </div>
+
+<!-- <div class="nav">
+   
+        <span class="nav-item active" onclick="showContent('order')">Order Online</span>
+        <span class="nav-item" onclick="showContent('reviews')">Reviews</span>
+        <span class="nav-item" onclick="showContent('photos')">Photos</span>
+        <span class="nav-item" onclick="showContent('Menu')">Menu</span>
+        <span class="nav-item" onclick="showContent('book')">Book Table</span>
+
+</div> -->
+<!-- <div class="content">
+    <div id="order" class="tab-content active">Order onlie content here</div>
+    <div id="reviews" class="tab-content">Reviews content here</div>
+    <div id="photos" class="tab-content">Photos of the food items is here</div>
+    <div id="Menu" class="tab-content">Menu Card of the restaurant is available here</div>
+    <div id="book" class="tab-content">book table content is here</div>
+</div> -->
+<!-- <script>
+    function showContent(id){
+        document.querySelectorAll('.nav-item').forEach(item=>{
+            item.classList.remove('active');
+        });
+        documnet.querySelectorAll('.tab-content').forEach(content=>{
+            content.classList.remove('active');
+        });
+        event.target.classList.add('active');
+        document.getElementById(id).classList.add('active');
+    }
+</script>       -->
+<div class="audio">
+  <h3>Audio</h3>
+  <audio controls>
+    <source src="C:\Users\ASWANI DURGA\Downloads\Pournami-Flute-Music-Ringtone.mp3" type="audio/mpeg">
+  </audio>
+</div>
+<div >
+  <h3 >iframes</h3>
+  <iframe src="restruu.html" width="500px" length="800px" class="iframe"></iframe>
+</div>
+
+</body>
+
+    </html>

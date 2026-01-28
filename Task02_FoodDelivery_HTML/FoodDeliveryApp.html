@@ -1,9 +1,330 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>appending the css</title>
-    </head>
-    <body>
-        <p>hello world</p>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Ordering | Restaurants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+      /*  body {
+            background-color: #f5f5f5;
+        }
+            */
+
+        /* Search bar */
+        header {
+            background-color: #d71372;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header input {
+            width: 60%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Suggestion section */
+        .suggestion {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .suggestion h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .suggestion p {
+            color: #666;
+        }
+
+        /* Restaurant cards */
+        .restaurants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 5px;
+            color: #222;
+        }
+
+        .rating {
+            color: #fff;
+            background-color: #28a745;
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #555;
+            font-size: 14px;
+        }
+        .items img{
+             width: 100%;
+             height: 160px;
+             object-fit: cover;
+             border-radius: 8px;
+        }
+        .suggestion{
+            display:grid;
+             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .items {
+           text-align: center;
+           background: white;
+           border-radius: 10px;
+           padding: 10px;
+}
+.items p{
+    margin-top:8px;
+    font-weight:bold;
+}
+.items:hover{
+     transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.heading{
+    text-align:center;
+}
+.headed:hover{
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    font-weight:bold;
+}
+    </style>
+</head>
+<body>
+    <script>
+        let selectedItem="";
+        let selectedPrice=0;
+        function selectItem(itemName,price){
+            selectedItem=itemName;
+            selectedPrice=price;
+            alert("You selected:"+itemName);
+        }
+    </script>
+    <!-- Search Bar -->
+    <header class="headed">
+        <input type="text" placeholder="Search for restaurants or food...">
+    </header>
+
+    <!-- Suggestion for new users -->
+    <div class="suggestion">
+        <a href="placeOrder.html" class="order" onclick="selectItem('Dosa',45)">
+        <div class="items">
+        <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\dosa.jpg" alt="dosa" >
+        <p class="name"><b>Dosa with chutney</b></p>
+        </div>
+        </a>
+        <a href="placeOrder.html" class="order" onclick="selectItem('Idly',20)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Idly.jpg" alt="Idly">
+            <p>Idly</p>
+        </div>
+        </a>
+        <a href="placeOrder.html" class="order" onclick="selectItem('Mysore Bonda',35)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Mysore.jpg" alt="Mysore Bonda">
+            <p>Mysore Bonda</p>
+        </div>
+        </a>
+        <a  href="placeOrder.html" class="order" onclick="selectItem('Biryani',160)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Biryani.jpg" alt="Biryani">
+            <p>Biryani</p>
+        </div>
+        </a>
+        <a href="placeOrder.html" class="order" onclick="selectItem('chicken lolipop',100)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Chicken.jpg" alt="chicken lolipop">
+            <p>Chicken lolipop</p>
+        </div>
+        </a>
+        <a href="placeOrder.html" class="order" onclick="selectItem('fried rice',65)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\rice.jpg" alt="fried rice">
+            <p>Fried Rice</p>
+        </div>
+        </a>
+        <a href="placeOrder.html" class="order" onclick="selectItem('maggie',20)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Maggie.jpeg" alt="maggie">
+            <p>Maggie</p>
+        </div>
+        </a>
+        <a href="placeOrder.html" class="order" onclick="selectItem('vada',40)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Vada.jpg" alt="vada">
+            <p>Vada</p>
+        </div>
+        </a>
+        <a href="placeOrder.html" class="order" onclick="selectItem('Sambar Rice',85)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Sambar.jpg" alt="Sambar Rice">
+            <p>Sambar rice</p>
+        </div>
+        </a>
+        <a href="placeOrder.html" class="order" onclick="selectItem('poori',25)">
+        <div class="items">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Poori.jpg" alt="poori">
+            <p>Poori</p>
+        </div>
+        </a>
+    </div>
+    <div>
+    
+    </div>
+    <!-- Restaurant List -->
+     <section class="heading"><h2>Discover the best restaurants near you and order your favorite food easily!</h2></section>
+    <section class="restaurants">
+        
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Spicy.jpg" alt="Restaurant 1">
+            <div class="card-content">
+                <h3>Spicy Hub</h3>
+                <span class="rating">4.5 ★</span>
+                <p>North Indian, Chinese, Biryani</p>
+            </div>
+        </a>
+
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\green.jpg" alt="Restaurant 2">
+            <div class="card-content">
+                <h3>Green Leaf</h3>
+                <span class="rating">4.2 ★</span>
+                <p>South Indian, Veg Meals</p>
+            </div>
+        </a>
+
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Burger.jpg" alt="Restaurant 3">
+            <div class="card-content">
+                <h3>Burger Town</h3>
+                <span class="rating">4.0 ★</span>
+                <p>Burgers, Fast Food, Snacks</p>
+            </div>
+        </a>
+
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Sweet.jpg" alt="Restaurant 4">
+            <div class="card-content">
+                <h3>Sweet Cravings</h3>
+                <span class="rating">4.7 ★</span>
+                <p>Desserts, Ice Cream, Bakery</p>
+            </div>
+        </a>
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\TasteT.jpg" alt="Restaurant 5">
+            <div class="card-content">
+                <h3>Taste Town</h3>
+                <span class="rating">4.3 ★</span>
+                <p>Fried rice,Chilly chicken,juices</p>
+            </div>
+        </a>
+         <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Junction.jpg" alt="Restaurant 6">
+            <div class="card-content">
+                <h3>Flavour Junction</h3>
+                <span class="rating">4.5 ★</span>
+                <p>Fast food,Sambar Rice,Drinks</p>
+            </div>
+        </a>
+         <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Hub.jpg" alt="Restaurant 7">
+            <div class="card-content">
+                <h3>The Hungry Hub</h3>
+                <span class="rating">4.4 ★</span>
+                <p>Fried rice,Chilly chicken,juices</p>
+            </div>
+        </a>
+         <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Royal.jpg" alt="Restaurant 8">
+            <div class="card-content">
+                <h3>The Royal Bites</h3>
+                <span class="rating">4.9 ★</span>
+                <p>Fried rice,Chilly chicken,juices</p>
+            </div>
+        </a>
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Quick.jpg" alt="Restaurant 9">
+            <div class="card-content">
+                <h3>Quick cravings</h3>
+                <span class="rating">4.1 ★</span>
+                <p>Fast food,Sambar Rice,Drinks</p>
+            </div>
+        </a>
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbDxRZwnnWYDe0sVnlCT7CNni9S831R30vjQ&s" alt="Restaurant 10">
+            <div class="card-content">
+                <h3>Bite Rush</h3>
+                <span class="rating">4.3 ★</span>
+                <p>Fast food,Sambar Rice,Drinks</p>
+            </div>
+        </a>
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB1tqFT7kGDcOhvQvJ0pWq9DB0J4lOsBd_VA&s" alt="Restaurant 11">
+            <div class="card-content">
+                <h3>dragon wok</h3>
+                <span class="rating">4.1 ★</span>
+                <p>Fast food,Sambar Rice,Drinks</p>
+            </div>
+        </a>
+        <a href="C:\Users\ASWANI DURGA\OneDrive\Desktop\FoodDeliveryApp\menu.html" class="card">
+            <img src="https://content3.jdmagicbox.com/comp/vijayawada/b4/0866px866.x866.220405203829.j9b4/catalogue/asian-food-bowl-restaurant-gurunanak-colony-road-auto-nagar-vijayawada-restaurants-vzu5aynfoj.jpg" alt="Restaurant 12">
+            <div class="card-content">
+                <h3>Asian Bowl</h3>
+                <span class="rating">4.8 ★</span>
+                <p>Fast food,Sambar Rice,Drinks</p>
+            </div>
+        </a>
+       
+    </section>
+
+</body>
 </html>

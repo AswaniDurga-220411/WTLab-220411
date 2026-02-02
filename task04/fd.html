@@ -158,61 +158,61 @@
     <div class="suggestion">
         <a href="placeOrder.html" class="order" onclick="selectItem('Dosa',45)">
         <div class="items">
-        <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\dosa.jpg" alt="dosa" >
+        <img src="https://www.cookwithmanali.com/wp-content/uploads/2020/05/Masala-Dosa.jpg" alt="dosa" >
         <p class="name"><b>Dosa with chutney</b></p>
         </div>
         </a>
         <a href="placeOrder.html" class="order" onclick="selectItem('Idly',20)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Idly.jpg" alt="Idly">
+            <img src="https://miro.medium.com/1*nfbDiVFxBQGys61H7X7B1A.jpeg" alt="Idly">
             <p>Idly</p>
         </div>
         </a>
         <a href="placeOrder.html" class="order" onclick="selectItem('Mysore Bonda',35)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Mysore.jpg" alt="Mysore Bonda">
+            <img src="https://revisfoodography.com/wp-content/uploads/2017/02/mysore-bonda-main-500x375.jpg" alt="Mysore Bonda">
             <p>Mysore Bonda</p>
         </div>
         </a>
         <a  href="placeOrder.html" class="order" onclick="selectItem('Biryani',160)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Biryani.jpg" alt="Biryani">
+            <img src="https://ministryofcurry.com/wp-content/uploads/2024/06/chicken-biryani-5.jpg" alt="Biryani">
             <p>Biryani</p>
         </div>
         </a>
         <a href="placeOrder.html" class="order" onclick="selectItem('chicken lolipop',100)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Chicken.jpg" alt="chicken lolipop">
+            <img src="https://www.cookwithkushi.com/wp-content/uploads/2022/01/best_chicken_lollipop_drums_of_chicken.jpg" alt="chicken lolipop">
             <p>Chicken lolipop</p>
         </div>
         </a>
         <a href="placeOrder.html" class="order" onclick="selectItem('fried rice',65)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\rice.jpg" alt="fried rice">
+            <img src="https://www.onceuponachef.com/images/2023/12/Fried-Rice-Hero-12.jpg" alt="fried rice">
             <p>Fried Rice</p>
         </div>
         </a>
         <a href="placeOrder.html" class="order" onclick="selectItem('maggie',20)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Maggie.jpeg" alt="maggie">
+            <img src="https://i.pinimg.com/736x/2e/ca/78/2eca785867f946992b0b7fe4fb118f4f.jpg" alt="maggie">
             <p>Maggie</p>
         </div>
         </a>
         <a href="placeOrder.html" class="order" onclick="selectItem('vada',40)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Vada.jpg" alt="vada">
+            <img src="https://myfoodstory.com/wp-content/uploads/2022/09/Medu-Vada-2.jpg" alt="vada">
             <p>Vada</p>
         </div>
         </a>
         <a href="placeOrder.html" class="order" onclick="selectItem('Sambar Rice',85)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Sambar.jpg" alt="Sambar Rice">
+            <img src="https://i2.wp.com/cookingfromheart.com/wp-content/uploads/2021/01/Sambar-Sadam-2.jpg?fit=684%2C1024&ssl=1" alt="Sambar Rice">
             <p>Sambar rice</p>
         </div>
         </a>
         <a href="placeOrder.html" class="order" onclick="selectItem('poori',25)">
         <div class="items">
-            <img src="C:\Users\ASWANI DURGA\OneDrive\Desktop\webpics\Poori.jpg" alt="poori">
+            <img src="https://cdn.pixabay.com/photo/2016/11/23/18/31/indian-food-1854247_1280.jpg" alt="poori">
             <p>Poori</p>
         </div>
         </a>
@@ -325,6 +325,31 @@
         </a>
        
     </section>
+
+    <script>
+fetch("http://localhost:3000/restaurants")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.querySelector(".restaurants");
+    container.innerHTML = "";
+
+    data.forEach(r => {
+      const card = `
+        <a href="menu.html?rid=${r.restaurant_id}" class="card">
+          <img src="${r.image}" alt="${r.restaurant_name}">
+          <div class="card-content">
+            <h3>${r.restaurant_name}</h3>
+            <span class="rating">${r.rating} ★</span>
+            <p>${r.cuisines}</p>
+          </div>
+        </a>
+      `;
+      container.innerHTML += card;
+    });
+  })
+  .catch(err => console.error("Fetch error:", err));
+</script>
+
 
 </body>
 </html>

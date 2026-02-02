@@ -3,7 +3,7 @@
 session_start();
 
 // 2. Database connection (XAMPP)
-$conn = new mysqli("localhost", "root", "", "registration_db");
+$conn = new mysqli("localhost", "root", "", "register");
 
 // 3. Check connection
 if ($conn->connect_error) {
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // 5. Fetch user by email
-    $sql = "SELECT * FROM users WHERE email='$email'";
+    $sql = "SELECT * FROM 	registration WHERE email='$email'";
     $result = $conn->query($sql);
 
     // 6. Check if user exists

@@ -1,10 +1,11 @@
- <?php
-$conn = new mysqli("localhost", "root", "", "fooddelidb");
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$conn = new mysqli("localhost", "root", "", "register");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -17,25 +18,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender   = $_POST['gender'];
     $country  = $_POST['country'];
 
-    if ($password != $confirm) {
-        $message = "❌ Passwords do not match!";
+    if ($password !== $confirm) {
+        die("❌ Passwords do not match");
+    }
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO registration 
+            (name, mobile, email, password, dob, gender, country)
+            VALUES 
+            ('$name', '$mobile', '$email', '$hashedPassword', '$dob', '$gender', '$country')";
+
+    if ($conn->query($sql)) {
+        echo "✅ Registration successful";
     } else {
-
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $hashedConfirm  = password_hash($confirm, PASSWORD_DEFAULT);
-
-        $sql = "INSERT INTO registration 
-                (name, mobile, email, password, confirm, dob, gender, country)
-                VALUES 
-                ('$name', '$mobile', '$email', '$hashedPassword', '$hashedConfirm', '$dob', '$gender', '$country')";
-
-        if ($conn->query($sql) === TRUE) {
-            $message = "✅ Registration successful!";
-        } else {
-            $message = "❌ Error: " . $conn->error;
-        }
+        echo "❌ Error: " . $conn->error;
     }
 }
+
 $conn->close();
 ?>
-

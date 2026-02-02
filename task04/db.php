@@ -1,14 +1,7 @@
 <?php
-$servername="localhost";
-$username="root";
-$password="";
-$database="fooddelidb";
+$conn = mysqli_connect("localhost", "root", "", "register");
 
-$conn=mysqli_connect($servername,$username,$password,$database);
-if(!$conn){
-    die("Connection failed:".mysqli_connect_error());
-}
-else{
-    echo "Database connected successfully!";
+if (!$conn) {
+    die("DB connection failed: " . mysqli_connect_error());
 }
 ?>

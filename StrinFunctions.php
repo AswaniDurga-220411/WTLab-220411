@@ -51,5 +51,6 @@ echo number_format(1234567.89,4)."<br>";
 echo addslashes("It's PHP")."<br>";
 #Remove backslashes-stripslashes();
 echo stripslashes("It\'s PHP");
-
+$nam=ucwords(strtolower("hELLO"));
+echo $nam;
 ?>

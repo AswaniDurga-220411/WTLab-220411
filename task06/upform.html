@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Upload file</title>
+        <style>
+             body{
+            background: linear-gradient(to right, lightblue, #0072ff);
+            font-family: Arial;
+            }
+            .form-bo{
+            width: 400px;              /* FIXED (was 350%) */
+            background: white;
+            padding: 30px;
+            margin: 100px auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        </style>
+    </head>
+    <body>
+        <div class="form-bo">
+            <h2 align="center">Upload file</h2>
+        <form action="upload.php" enctype="multipart/form-data" method="post">
+                <label>Upload file: </label>
+                <input type="file" name="myfile" required><br><br><br>
+            <input type="submit" name="sub">
+        </form>
+        </div>
+    </body>
+</html>

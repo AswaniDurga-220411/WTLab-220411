@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+$auth_uri = "google_Oauth.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,6 +144,9 @@
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     font-weight:bold;
 }
+.google{
+    text-align:right;
+}
     </style>
 </head>
 <body>
@@ -150,9 +160,16 @@
         }
     </script>
     <!-- Search Bar -->
-    <header class="headed">
-        <input type="text" placeholder="Search for restaurants or food...">
-    </header>
+ <header>
+<?php if(isset($_SESSION['username'])): ?>
+    Welcome <?= htmlspecialchars($_SESSION['username']) ?> |
+    <a href="logout.php">Logout</a>
+<?php else: ?>
+    <a href="<?= $auth_uri ?>">Login with Google</a> |
+    <a href="login.php">Normal Login</a>
+<?php endif; ?>
+</header>
+
 
     <!-- Suggestion for new users -->
     <div class="suggestion">

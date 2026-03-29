@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Startup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="title">🚀 My Startup Website</h1>
+
+    <!-- Task 4: Change content -->
+    <p id="desc">Welcome to our startup!</p>
+    <button onclick="changeText()">Change Text</button>
+
+    <!-- Task 5: Style toggle -->
+    <button onclick="toggleStyle()">Toggle Theme</button>
+
+    <!-- Task 3: Alert & Prompt -->
+    <button onclick="askName()">Enter Name</button>
+
+    <!-- Task 2: Math operations -->
+    <h3>Calculator</h3>
+    <input type="number" id="num1" placeholder="Enter number 1">
+    <input type="number" id="num2" placeholder="Enter number 2">
+    <button onclick="addNumbers()">Add</button>
+    <button onclick="subtractNumbers()">Subtract</button>
+    <p id="result"></p>
+
+    <!-- Task 6: Events -->
+    <div id="hoverBox" onmouseover="hoverIn()" onmouseout="hoverOut()">
+        Hover over me!
+    </div>
+
+    <!-- Task 7: Form -->
+    <h3>Contact Form</h3>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="username" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Print Button -->
+    <button onclick="printPage()">Print / Save as PDF</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
